@@ -9,8 +9,7 @@ export default {
 			text:'abc'
 		}
 	}
-}
-	
+}	
 </script>
 
 <style type="text/css">

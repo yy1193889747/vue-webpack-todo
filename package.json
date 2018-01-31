@@ -5,8 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.config.js"
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js"
   },
   "author": "ocly",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "css-loader": "^0.28.9",
+    "file-loader": "^1.1.6",
+    "style-loader": "^0.20.1",
+    "url-loader": "^0.6.2",
+    "vue": "^2.5.13",
+    "vue-loader": "^13.7.0"
+  }
 }

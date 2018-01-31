@@ -7,6 +7,6 @@ import './assets/style/test.css'
 const root = document.createElement('div')
 document.body.appendChild(root)
 
-new vue({
+new Vue({
 	render: (h) => h(App)
 }).$mount(root)
