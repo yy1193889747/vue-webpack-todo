@@ -21,3 +21,7 @@
 ## 第2章 vue+webpack项目工程配置
 ### 2-1 vue-loader+webpack项目配置
 1. 
+
+
+
+npm i extract-text-webpack-plugin --save
