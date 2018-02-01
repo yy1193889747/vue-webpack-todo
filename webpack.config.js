@@ -13,6 +13,7 @@ const config = {
         path: path.join(__dirname, 'dist')
     },
     module: {
+    	 // 模块规则（配置 loader、解析器等选项）
         rules: [{
                 test: /\.vue$/,
                 loader: 'vue-loader'

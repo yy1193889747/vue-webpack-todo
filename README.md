@@ -53,6 +53,7 @@
 ```
 ## 第1章
 * [webpack中文文档](https://doc.webpack-china.org/concepts/)
+* [webpack加载器](http://www.css88.com/doc/webpack/loaders/)
 * [vue中文文档](https://cn.vuejs.org/v2/guide/)
 ## 第2章
 ### 2-1
@@ -111,6 +112,7 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js"
 	```
 	* [webpack.config.js](./webpack.config.js)  知识点都在里面
+	* [官方webpack配置](https://doc.webpack-china.org/configuration/)
 
 ## 第3章
 ### 3-1
