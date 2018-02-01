@@ -12,8 +12,8 @@
    	   * [3-3 实现todo应用的界面](#3-3)
    	   * [3-4 实现todo应用的业务逻辑](#3-4)
    * 第4章 webpack配置优化
-   	   * [4-1 webpack配置css单独分离打包](#2-3)
-   	   * [4-2 webpack区分打包类库代码及hash优化](#2-3)
+   	   * [4-1 webpack配置css单独分离打包](#4-1)
+   	   * [4-2 webpack区分打包类库代码及hash优化](#4-2)
    * 第5章 课程总结
 ## 目录结构
 ```
@@ -139,12 +139,13 @@
 * computed 计算几点个数
 ## 第4章
 ### 4-1
-1. 安装依赖
+* . 安装依赖，实现css分离。 
 	```
 	npm i extract-text-webpack-plugin --save
 	```
+*  静态资源加hash后缀，方便浏览器长缓存。
 ### 4-2
-1. vue单独打包成vendor
-2. hash为一次打包的值，chunkhash为不同模块的hash值
-3. webpack单独打包成runtime，新模块加入放到后面
-4. vendor放到runtime前
+*  vue单独打包成vendor
+*  hash为一次打包的值，chunkhash为不同模块的hash值
+*  webpack单独打包成runtime，新模块加入放到后面
+*  vendor放到runtime前
