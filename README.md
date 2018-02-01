@@ -156,7 +156,7 @@ h => h(App);
 * `computed` 计算几点个数
 ## 第4章
 ### 4-1
-* . 安装依赖，实现css分离。 
+*  安装依赖，实现css分离。 
 
 	```
 	npm i extract-text-webpack-plugin --save
