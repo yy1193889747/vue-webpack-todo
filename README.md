@@ -125,18 +125,19 @@
 2. 创建postcss.config.js文件   增加css前缀，满足不同浏览器
 3. 创建.babelrc文件， 满足vue中 jsx文件的解析
 ### 3-3
-*  @keyup.enter = "方法名" 等同于  v-on:keyup.enter = "方法名"  
-*  v-model = "todo.completed" 数据绑定
-* @click = "deleteTodo" 点击事件
-* :class"['todo-item',todo.completed ? 'completed' : '']" 动态class
-* v-for="state in states"  for循环
+*  `@keyup.enter = "方法名" ` 等同于  `v-on:keyup.enter = "方法名"`  
+*  `v-model = "todo.completed" `轻松实现表单输入和应用状态之间的双向绑定
+* `@click = "deleteTodo"` 点击事件
+* `:class"['todo-item',todo.completed ? 'completed' : '']"` 动态class 省略了v-bind
+* `v-for="state in states"`  for循环
+* `v-bind:todo="item"` 指令将待办项传到循环输出的每个组件中
 
 ### 3-4
-* this.todo.unshift({}) 向前插入
-* this.$emit('del',this.todo.id)  父主键会监听子主键的事件
-* @del 父主键开启监听
-* this.todos.splice(this.todos.findIndex(todo => todo.id === id),1) 删除节点
-* computed 计算几点个数
+* `this.todo.unshift({})` 向前插入
+* ` this.$emit('del',this.todo.id)`  父主键会监听子主键的事件
+* ` @del `父组件监听子组件触发的事件
+* `this.todos.splice(this.todos.findIndex(todo => todo.id === id),1)` 删除节点
+* `computed` 计算几点个数
 ## 第4章
 ### 4-1
 * . 安装依赖，实现css分离。 
