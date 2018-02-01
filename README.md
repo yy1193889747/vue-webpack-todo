@@ -4,16 +4,16 @@
    * [第1章 课程介绍](#第1章dasdasd)
    * 第2章 vue+webpack项目工程配置
 	   * [2-1 vue-loader+webpack项目配置](#2-1)
-	   * [2-2 webpack配置项目加载各种静态资源及css预处理器]()
-	   * [2-3 webpack-dev-server的配置和使用]()
+	   * [2-2 webpack配置项目加载各种静态资源及css预处理器](#2-2)
+	   * [2-3 webpack-dev-server的配置和使用](#2-3)
    * 第3章 vue介绍和项目实战
-   	   * 3-1 vue2的核心知识介绍
-   	   * 3-2 配置vue的jsx写法以及postcss
-   	   * 3-3 实现todo应用的界面
-   	   * 3-4 实现todo应用的业务逻辑
+   	   * [3-1 vue2的核心知识介绍](#3-1)
+   	   * [3-2 配置vue的jsx写法以及postcss](#3-2)
+   	   * [3-3 实现todo应用的界面](#3-3)
+   	   * [3-4 实现todo应用的业务逻辑](#3-4)
    * 第4章 webpack配置优化
-   	   * 4-1 webpack配置css单独分离打包
-   	   * 4-2 webpack区分打包类库代码及hash优化
+   	   * [4-1 webpack配置css单独分离打包](#2-3)
+   	   * [4-2 webpack区分打包类库代码及hash优化](#2-3)
    * 第5章 课程总结
 ## 目录结构
 ```
@@ -35,19 +35,19 @@
     |   |   |   `-- do.png
     |   |   `-- styles
     |   |       |-- footer.styl
-    |   |       |-- global.styl
+    |   |       |-- global.styl       全局样式
     |   |       `-- test.css
     |   `-- todo  核心包
-    |       |-- footer.jsx
-    |       |-- header.vue
+    |       |-- footer.jsx            底部
+    |       |-- header.vue            头部
     |       |-- item.vue
     |       |-- tabs.vue
     |       `-- todo.vue
     |   |-- app.vue                   vue特殊的文件
     |   `-- index.js                  入口文件
-    |-- .babelrc
+    |-- .babelrc					  
     |-- package.json
-    |-- postcss.config.js
+    |-- postcss.config.js             增加css前缀
     |-- README.md
     `-- webpack.config.js             打包前段资源
 ```
@@ -96,23 +96,38 @@
 	```
 3. css预处理器stylus-loader 写法随意
 ### 2-3
-1. 安装依赖 webpack-dev-server用于开发环境,
+1. 安装依赖 webpack-dev-server用于开发环境
+
 	```
 	npm i webpack-dev-server --save
 	npm i cross-env --save  环境变量，适用于不同平台
+	npm i html-webpack-plugin --save 生成html页面
 	```
 2. 配置文件设置 process.env.NODE_ENV获取输入的环境变量
 	* package.json
+
 	```
 	"build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js"
 	```
-	* [webpack.config.js](./webpack.config.js)
+	* [webpack.config.js](./webpack.config.js)  知识点都在里面
 
+## 第3章
+### 3-1
+* [vue中文文档](https://cn.vuejs.org/v2/guide/) 
+### 3-2
+1. 安装依赖
 
-
-
-
-
+	```
+	npm i postcss-loader autoprefixer babel-loader babel-core --save
+	npm i babel-preset-env babel-transform-vue-jsx --save
+	```
+2. 创建postcss.config.js文件   增加css前缀，满足不同浏览器
+3. 创建.babelrc文件， 满足vue中 jsx文件的解析
+### 3-3
+1. 安装依赖
+## 第4章
+### 4-1
+1. 安装依赖
 
 npm i extract-text-webpack-plugin --save

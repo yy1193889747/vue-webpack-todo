@@ -51,7 +51,7 @@ if (isDev) {
             'style-loader',
             'css-loader',
             {
-                loader: 'postcss-loader',
+                loader: 'postcss-loader', //编译效率更快
                 options: {
                     sourceMap: true,
                 }

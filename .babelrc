@@ -3,6 +3,6 @@
 	"env"
 	],
 	"plugins":[
-	"transform-vue-jsx"
+	"transform-vue-jsx"  //转化vue中jsx代码
 	]
 }
