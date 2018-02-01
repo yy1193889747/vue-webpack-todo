@@ -125,12 +125,26 @@
 2. 创建postcss.config.js文件   增加css前缀，满足不同浏览器
 3. 创建.babelrc文件， 满足vue中 jsx文件的解析
 ### 3-3
-1. see code
+*  @keyup.enter = "方法名" 等同于  v-on:keyup.enter = "方法名"  
+*  v-model = "todo.completed" 数据绑定
+* @click = "deleteTodo" 点击事件
+* :class"['todo-item',todo.completed ? 'completed' : '']" 动态class
+* v-for="state in states"  for循环
+
 ### 3-4
-1. see code
+* this.todo.unshift({}) 向前插入
+* this.$emit('del',this.todo.id)  父主键会监听子主键的事件
+* @del 父主键开启监听
+* this.todos.splice(this.todos.findIndex(todo => todo.id === id),1) 删除节点
+* computed 计算几点个数
 ## 第4章
 ### 4-1
 1. 安装依赖
 	```
 	npm i extract-text-webpack-plugin --save
 	```
+### 4-2
+1. vue单独打包成vendor
+2. hash为一次打包的值，chunkhash为不同模块的hash值
+3. webpack单独打包成runtime，新模块加入放到后面
+4. vendor放到runtime前

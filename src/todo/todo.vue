@@ -47,8 +47,9 @@ export default {
   },
   methods: {
       addTodo(e){
-         if(e.target.value==''){
+         if(e.target.value.trim()==''){
              alert("你什么都没有添加哦")
+             e.target.value =''
          }
          else{
              this.todos.unshift({
@@ -61,7 +62,6 @@ export default {
           
       },
      deleteTodo(id){
-        //  console.log(todo => todo.id ===id);
          this.todos.splice(this.todos.findIndex(todo => todo.id ===id),1)
      },
      toggleFilter(state){

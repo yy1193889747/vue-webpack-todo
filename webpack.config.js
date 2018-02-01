@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const path = require('path')
 const isDev = process.env.NODE_ENV === 'development'
 const HTMLPlugin = require('html-webpack-plugin')
+// 非js代码单独打包
 const ExtractPlugin = require('extract-text-webpack-plugin')
 
 const config = {
@@ -75,7 +76,7 @@ if (isDev) {
         new webpack.HotModuleReplacementPlugin(), // hot插件
         new webpack.NoEmitOnErrorsPlugin() // 减少不需要信息的展示
     )
-} else {
+} else {   // 正式打包	使用chunkhash
     config.entry = {
         app: path.join(__dirname, 'src/index.js'),
         vendor: ["vue"]
