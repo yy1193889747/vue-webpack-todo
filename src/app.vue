@@ -1,9 +1,9 @@
 <template>
 <div id="app">	
-<div id="cover"></div>
-<Header></Header>
-<todo></todo>
-<Footer></Footer>
+	<div id="cover"></div>
+	<Header></Header>
+	<todo></todo>
+	<Footer></Footer>
 </div>
 
 </template>
@@ -22,6 +22,7 @@ export default {
 }	
 </script>
 
+//背景虚化，scoped只应用于本组件
 <style lang="stylus" scoped>
 #app{
 	position absolute
