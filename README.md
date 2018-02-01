@@ -56,6 +56,16 @@
 * [vue中文文档](https://cn.vuejs.org/v2/guide/)
 ## 第2章
 ### 2-1
+=> 为ES6用法
+```
+// ES5  
+(function (h) {  
+  return h(App);  
+});  
+
+// ES6  
+h => h(App); 
+```
 1. 初始化项目 所以依赖安装都加 --save 保存到package.json
 
 	```
