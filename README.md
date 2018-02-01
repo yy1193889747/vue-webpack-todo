@@ -54,6 +54,7 @@
 ## 第1章
 * [webpack中文文档](https://doc.webpack-china.org/concepts/)
 * [vue中文文档](https://cn.vuejs.org/v2/guide/)
+* [ECMAScript 6 入门](http://es6.ruanyifeng.com/)
 ## 第2章
 ### 2-1
 => 为ES6用法
@@ -156,7 +157,7 @@ h => h(App);
 * `computed` 计算几点个数
 ## 第4章
 ### 4-1
-*  安装依赖，实现css分离。 
+* . 安装依赖，实现css分离。 
 
 	```
 	npm i extract-text-webpack-plugin --save
