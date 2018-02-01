@@ -28,7 +28,6 @@ const config = {
                         limit: 1024,
                         name: '[name]-aaa.[ext]'
                     }
-
                 }]
             }
         ]

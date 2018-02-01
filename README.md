@@ -1,7 +1,7 @@
 # vue-webpack-todo
-慕课网学习笔记，项目使用Sublime编写，[演示地址](http://111.231.86.225:8080/)
+慕课网学习笔记，包括每节课的各种依赖，项目使用Sublime编写，[演示地址](http://111.231.86.225:8080/)
 ## 目录
-   * [第1章 课程介绍](#第1章)
+   * [第1章 课程介绍](#第1章dasdasd)
    * 第2章 vue+webpack项目工程配置
 	   * [2-1 vue-loader+webpack项目配置](#2-1)
 	   * [2-2 webpack配置项目加载各种静态资源及css预处理器]()
@@ -15,12 +15,103 @@
    	   * 4-1 webpack配置css单独分离打包
    	   * 4-2 webpack区分打包类库代码及hash优化
    * 第5章 课程总结
+## 目录结构
+```
+-- vue-webpack-todo
+    |-- dist                          输出目录
+    |   |-- app.75969742.js
+    |   |-- bg-aaa.jpg
+    |   |-- done-aaa.png
+    |   |-- index.html
+    |   |-- runtime.64546a9c.js
+    |   |-- styles.bc300e26.css
+    |   `-- vendor.cdaa858e.js
+    |-- node_modules                  依赖包
+    |-- src                           源码包
+    |   |-- assets                    资源文件
+    |   |   |-- images
+    |   |   |   |-- bg.jpg
+    |   |   |   |-- done.png
+    |   |   |   `-- do.png
+    |   |   `-- styles
+    |   |       |-- footer.styl
+    |   |       |-- global.styl
+    |   |       `-- test.css
+    |   `-- todo  核心包
+    |       |-- footer.jsx
+    |       |-- header.vue
+    |       |-- item.vue
+    |       |-- tabs.vue
+    |       `-- todo.vue
+    |   |-- app.vue                   vue特殊的文件
+    |   `-- index.js                  入口文件
+    |-- .babelrc
+    |-- package.json
+    |-- postcss.config.js
+    |-- README.md
+    `-- webpack.config.js             打包前段资源
+```
 ## 第1章
 * [webpack中文文档](https://doc.webpack-china.org/concepts/)
 * [vue中文文档](https://cn.vuejs.org/v2/guide/)
 ## 第2章
 ### 2-1
-1. 
+1. 初始化项目 所以依赖安装都加 --save 保存到package.json
+
+	```
+	npm i webpack vue vue-loader --save 安装webpack 及 vue
+	npm i css-loader vue-template-compiler --save vue的依赖包
+	```
+
+2. webpack配置文件
+	* const path = require('path') 引入path包
+	* path.join(__dirname, 'src/index.js') 入口文件地址
+	* __dirname 表示文件根目录
+	* 使用module rules: 配置各种加载器
+3. package.json配置启动，确保使用的是本项目的webpack，而不是全局
+    
+	```
+	"build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+	```
+### 2-2
+1. 图片加载器，小于1024的使用url-loader处理成base64代码，直接写到js代码中而不生成新的文件。
+
+	```
+	{
+        test: /\.(gif|jpg|jpeg|png|svg)$/,
+        use: [{
+            loader: 'url-loader',
+            options: {
+                limit: 1024,
+                name: '[name]-aaa.[ext]'
+         }
+ 	   }]
+	}
+	```
+2. 安装依赖
+	
+	```
+	npm i style-loader url-loader file-loader --save
+	npm i stylus-loader stylus --save
+	```
+3. css预处理器stylus-loader 写法随意
+### 2-3
+1. 安装依赖 webpack-dev-server用于开发环境,
+	```
+	npm i webpack-dev-server --save
+	npm i cross-env --save  环境变量，适用于不同平台
+	```
+2. 配置文件设置 process.env.NODE_ENV获取输入的环境变量
+	* package.json
+	```
+	"build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js"
+	```
+	* [webpack.config.js](./webpack.config.js)
+
+
+
+
 
 
 
