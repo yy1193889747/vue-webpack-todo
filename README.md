@@ -1,7 +1,7 @@
 # vue-webpack-todo
-慕课网学习笔记，包括每节课的各种依赖，项目使用Sublime编写，[演示地址](http://111.231.86.225:8080/)
+慕课网学习笔记，包括每节课的各种依赖及知识点，项目使用Sublime编写，[演示地址](http://111.231.86.225:8080/)
 ## 目录
-   * [第1章 课程介绍](#第1章dasdasd)
+   * [第1章 课程介绍](#第1章)
    * 第2章 vue+webpack项目工程配置
 	   * [2-1 vue-loader+webpack项目配置](#2-1)
 	   * [2-2 webpack配置项目加载各种静态资源及css预处理器](#2-2)
@@ -14,7 +14,7 @@
    * 第4章 webpack配置优化
    	   * [4-1 webpack配置css单独分离打包](#4-1)
    	   * [4-2 webpack区分打包类库代码及hash优化](#4-2)
-   * 第5章 课程总结
+   * [第5章 课程总结](#第5章)
 ## 目录结构
 ```
 -- vue-webpack-todo
@@ -53,7 +53,6 @@
 ```
 ## 第1章
 * [webpack中文文档](https://doc.webpack-china.org/concepts/)
-* [webpack加载器](http://www.css88.com/doc/webpack/loaders/)
 * [vue中文文档](https://cn.vuejs.org/v2/guide/)
 ## 第2章
 ### 2-1
@@ -112,7 +111,6 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js"
 	```
 	* [webpack.config.js](./webpack.config.js)  知识点都在里面
-	* [官方webpack配置](https://doc.webpack-china.org/configuration/)
 
 ## 第3章
 ### 3-1
@@ -152,3 +150,5 @@
 *  hash为一次打包的值，chunkhash为不同模块的hash值
 *  webpack单独打包成runtime，新模块加入放到后面
 *  vendor放到runtime前
+## 第5章
+webpack功能强大
