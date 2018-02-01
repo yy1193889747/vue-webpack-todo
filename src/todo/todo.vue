@@ -9,10 +9,11 @@
         >
         <Item 
         :todo="todo"
-        v-for="todo in filteredTodos"
+        v-for="(todo,index) in filteredTodos"
         :key="todo.id"
-        @del="deleteTodo"
-        ></Item>   
+        @del="deleteTodo" 
+        ></Item>   	
+        <!--"@del=todos.splice(index,1)" 可以这样写-->
         <Tabs 
         :filter="filter" 
         :todos="todos"

@@ -133,6 +133,11 @@ h => h(App);
 	npm i babel-preset-env babel-transform-vue-jsx --save
 	```
 2. 创建postcss.config.js文件   增加css前缀，满足不同浏览器
+	* 主流浏览器引擎前缀:
+		*   `-webkit- (`谷歌, Safari, 新版Opera浏览器等)
+		*   `-moz- `(火狐浏览器)
+		*   `-o-` (旧版Opera浏览器等)
+		*   `-ms-` (IE浏览器 和 Edge浏览器)
 3. 创建.babelrc文件， 满足vue中 jsx文件的解析
 ### 3-3
 *  `@keyup.enter = "方法名" ` 等同于  `v-on:keyup.enter = "方法名"`  
@@ -141,6 +146,7 @@ h => h(App);
 * `:class"['todo-item',todo.completed ? 'completed' : '']"` 动态class 省略了v-bind
 * `v-for="state in states"`  for循环
 * `v-bind:todo="item"` 指令将待办项传到循环输出的每个组件中
+* `:key`避免重复渲染 建议尽可能在使用 `v-for` 时提供 `key`
 
 ### 3-4
 * `this.todo.unshift({})` 向前插入

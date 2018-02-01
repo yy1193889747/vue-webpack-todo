@@ -5,7 +5,7 @@
         class="toggle"
         v-model="todo.completed"
         >
-        <label> {{todo.content}}</label>
+        <label>{{todo.content}}</label>
         <button class="destroy" @click="deletetodo"> </button>
     </div>
 </template>
