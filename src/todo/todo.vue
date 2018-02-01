@@ -1,5 +1,6 @@
 <template>
     <section class="real-app">
+    	<button class="buttons" @click="shuffle">Shuffle</button>
         <input 
         type="text"
         class="add-input"
@@ -7,12 +8,13 @@
         placeholder="接下来做什么"
         @keyup.enter="addTodo"
         >
+        <transition-group name="flip-list">
         <Item 
         :todo="todo"
         v-for="(todo,index) in filteredTodos"
         :key="todo.id"
-        @del="deleteTodo" 
-        ></Item>   	
+        @del="deleteTodo"
+        ></Item></transition-group>
         <!--"@del=todos.splice(index,1)" 可以这样写-->
         <Tabs 
         :filter="filter" 
@@ -25,6 +27,7 @@
 <script>
 import Item from './item.vue'
 import Tabs from './tabs.vue'
+import './lodash.min.js'
 let id = 0
 export default {
     data() {
@@ -48,6 +51,10 @@ export default {
   },
   methods: {
       addTodo(e){
+      	 if(this.todos.length>4){
+			alert("加太多了哦")
+			return
+         }
          if(e.target.value.trim()==''){
              alert("你什么都没有添加哦")
              e.target.value =''
@@ -71,11 +78,18 @@ export default {
      clearAllCompleted(){
          this.todos = this.todos.filter(todo => !todo.completed)
          
+     },
+     shuffle(){
+     	this.todos = _.shuffle(this.todos)
      }
   },
 }
 </script>
 <style lang="stylus" scoped>
+.buttons{
+	margin 21px 500px
+	position: fixed
+}
 .real-app{
     width 600px
     margin :0px  auto
@@ -99,5 +113,8 @@ export default {
     font-smoothing:antialiased;
     padding 16px 16px 16px 60px
     border none  
+}
+.flip-list-move{
+  transition: transform 0.8s;
 }
 </style>
