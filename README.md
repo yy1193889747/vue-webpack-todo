@@ -125,9 +125,12 @@
 2. 创建postcss.config.js文件   增加css前缀，满足不同浏览器
 3. 创建.babelrc文件， 满足vue中 jsx文件的解析
 ### 3-3
-1. 安装依赖
+1. see code
+### 3-4
+1. see code
 ## 第4章
 ### 4-1
 1. 安装依赖
-
-npm i extract-text-webpack-plugin --save
+	```
+	npm i extract-text-webpack-plugin --save
+	```
